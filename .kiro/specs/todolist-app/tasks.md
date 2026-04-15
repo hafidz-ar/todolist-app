@@ -26,13 +26,13 @@ Implementasi aplikasi todolist berbasis Vanilla JS (HTML/CSS/JavaScript murni) d
   - Semua transisi menggunakan `0.1s ease` — cepat dan mekanis, tanpa animasi fade/blur
   - _Requirements: 2.3, 3.2 — lihat design.md bagian "Visual Design: Neobrutalism"_
 
-- [ ] 3. Implementasi Model — fungsi state management
-  - [ ] 3.1 Implementasi konstanta dan struktur data dasar
+- [x] 3. Implementasi Model — fungsi state management
+  - [x] 3.1 Implementasi konstanta dan struktur data dasar
     - Definisikan konstanta `FILTERS` (`all`, `active`, `completed`) dan `STORAGE_KEY`
     - Definisikan `initialState` (`tasks: [], filter: 'all'`)
     - _Requirements: 5.1, 5.5_
 
-  - [ ] 3.2 Implementasi fungsi `addTask(state, text)`
+  - [x] 3.2 Implementasi fungsi `addTask(state, text)`
     - Validasi: trim teks, tolak jika kosong atau panjang > 200 karakter (kembalikan state semula)
     - Buat task baru dengan `id` (format `Date.now()-random`), `text` (trimmed), `completed: false`, `createdAt: Date.now()`
     - Kembalikan state baru dengan task ditambahkan ke array `tasks`
@@ -44,7 +44,7 @@ Implementasi aplikasi todolist berbasis Vanilla JS (HTML/CSS/JavaScript murni) d
     - **Property 2: Input whitespace-only dan teks terlalu panjang ditolak**
     - **Validates: Requirements 1.4, 1.5**
 
-  - [ ] 3.4 Implementasi fungsi `toggleTask(state, id)`
+  - [x] 3.4 Implementasi fungsi `toggleTask(state, id)`
     - Temukan task berdasarkan `id`, balik nilai `completed`-nya
     - Kembalikan state baru (pure function, tidak mutasi langsung)
     - _Requirements: 3.1, 3.3_
@@ -53,7 +53,7 @@ Implementasi aplikasi todolist berbasis Vanilla JS (HTML/CSS/JavaScript murni) d
     - **Property 3: Toggle adalah involution (round-trip)**
     - **Validates: Requirements 3.1, 3.3**
 
-  - [ ] 3.6 Implementasi fungsi `deleteTask(state, id)`
+  - [x] 3.6 Implementasi fungsi `deleteTask(state, id)`
     - Filter array `tasks` untuk menghapus task dengan `id` yang sesuai
     - Kembalikan state baru (pure function)
     - _Requirements: 4.2_
@@ -62,7 +62,7 @@ Implementasi aplikasi todolist berbasis Vanilla JS (HTML/CSS/JavaScript murni) d
     - **Property 4: Penghapusan task bersifat permanen dan tepat sasaran**
     - **Validates: Requirements 4.2**
 
-  - [ ] 3.8 Implementasi fungsi `setFilter(state, filter)`
+  - [x] 3.8 Implementasi fungsi `setFilter(state, filter)`
     - Kembalikan state baru dengan `filter` diperbarui
     - _Requirements: 5.2, 5.3, 5.4_
 
