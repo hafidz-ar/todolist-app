@@ -66,13 +66,13 @@ Implementasi aplikasi todolist berbasis Vanilla JS (HTML/CSS/JavaScript murni) d
     - Kembalikan state baru dengan `filter` diperbarui
     - _Requirements: 5.2, 5.3, 5.4_
 
-- [ ] 4. Implementasi Model — persistensi localStorage
-  - [ ] 4.1 Implementasi fungsi `saveState(state)`
+- [x] 4. Implementasi Model — persistensi localStorage
+  - [x] 4.1 Implementasi fungsi `saveState(state)`
     - Simpan state ke `localStorage` dengan key `STORAGE_KEY` dalam format JSON
     - Tangkap exception `QuotaExceededError` — lanjutkan tanpa menyimpan
     - _Requirements: 6.1_
 
-  - [ ] 4.2 Implementasi fungsi `loadState()`
+  - [x] 4.2 Implementasi fungsi `loadState()`
     - Baca dan parse JSON dari `localStorage`
     - Validasi struktur: harus objek dengan `tasks` berupa array; jika tidak valid kembalikan `initialState`
     - Tangkap exception jika `localStorage` tidak tersedia atau JSON rusak — kembalikan `initialState`
@@ -84,12 +84,12 @@ Implementasi aplikasi todolist berbasis Vanilla JS (HTML/CSS/JavaScript murni) d
     - **Property 8: Data localStorage yang tidak valid menghasilkan state awal yang bersih**
     - **Validates: Requirements 6.3**
 
-- [ ] 5. Checkpoint — Pastikan semua tests Model lulus
+- [x] 5. Checkpoint — Pastikan semua tests Model lulus
   - Jalankan `npx vitest --run` dan pastikan semua property test dan unit test untuk Model lulus.
   - Tanyakan kepada pengguna jika ada pertanyaan sebelum melanjutkan.
 
-- [ ] 6. Implementasi View — fungsi rendering
-  - [ ] 6.1 Implementasi fungsi `getFilteredTasks(tasks, filter)`
+- [x] 6. Implementasi View — fungsi rendering
+  - [x] 6.1 Implementasi fungsi `getFilteredTasks(tasks, filter)`
     - Kembalikan subset tasks sesuai nilai filter (`all` → semua, `active` → belum selesai, `completed` → selesai)
     - Urutkan berdasarkan `createdAt` ascending (terlama di atas, terbaru di bawah)
     - _Requirements: 2.1, 5.2, 5.3, 5.4_
@@ -100,7 +100,7 @@ Implementasi aplikasi todolist berbasis Vanilla JS (HTML/CSS/JavaScript murni) d
     - **Property 6: Urutan tampilan task sesuai waktu penambahan**
     - **Validates: Requirements 2.1**
 
-  - [ ] 6.3 Implementasi fungsi `renderTaskList(tasks, filter)`
+  - [x] 6.3 Implementasi fungsi `renderTaskList(tasks, filter)`
     - Render elemen `<ul>` dengan `<li>` untuk setiap task hasil `getFilteredTasks`
     - Setiap `<li>` berisi: checkbox (dengan status `checked` sesuai `completed`), teks task, tombol hapus
     - Tambahkan class CSS `completed` pada `<li>` jika task selesai (teks dicoret)
@@ -117,7 +117,7 @@ Implementasi aplikasi todolist berbasis Vanilla JS (HTML/CSS/JavaScript murni) d
     - **Property 10: Rendering task item selalu mengandung teks dan indikator status**
     - **Validates: Requirements 2.3, 3.2**
 
-  - [ ] 6.6 Implementasi fungsi `renderSummary(tasks)`
+  - [x] 6.6 Implementasi fungsi `renderSummary(tasks)`
     - Hitung jumlah task dengan `completed = false`
     - Render teks ringkasan (misal: "2 dari 5 tugas belum selesai")
     - _Requirements: 7.1, 7.2_
@@ -126,7 +126,7 @@ Implementasi aplikasi todolist berbasis Vanilla JS (HTML/CSS/JavaScript murni) d
     - **Property 9: Ringkasan selalu akurat untuk semua state**
     - **Validates: Requirements 7.1, 7.2**
 
-  - [ ] 6.8 Implementasi fungsi `renderFilters(activeFilter)`
+  - [x] 6.8 Implementasi fungsi `renderFilters(activeFilter)`
     - Render tiga tombol filter: "Semua", "Belum Selesai", "Selesai"
     - Tandai tombol aktif dengan class CSS yang sesuai
     - _Requirements: 5.1, 5.5_
@@ -136,39 +136,39 @@ Implementasi aplikasi todolist berbasis Vanilla JS (HTML/CSS/JavaScript murni) d
     - Verifikasi filter default "Semua" aktif saat pertama kali dibuka (Requirements 5.5)
     - _Requirements: 5.1, 5.5_
 
-  - [ ] 6.10 Implementasi fungsi `render(state)`
+  - [x] 6.10 Implementasi fungsi `render(state)`
     - Panggil `renderTaskList`, `renderSummary`, dan `renderFilters` dengan data dari state
     - _Requirements: 2.1, 2.2, 2.3, 5.1, 7.1_
 
-- [ ] 7. Implementasi Controller — event handling dan inisialisasi
-  - [ ] 7.1 Implementasi fungsi `handleAddTask(state)`
+- [x] 7. Implementasi Controller — event handling dan inisialisasi
+  - [x] 7.1 Implementasi fungsi `handleAddTask(state)`
     - Baca nilai dari input field, panggil `addTask`, simpan state baru via `saveState`, kosongkan input, panggil `render`
     - _Requirements: 1.2, 1.3, 1.4, 1.5_
 
-  - [ ] 7.2 Implementasi fungsi `handleToggleTask(state, id)`
+  - [x] 7.2 Implementasi fungsi `handleToggleTask(state, id)`
     - Panggil `toggleTask`, simpan state baru via `saveState`, panggil `render`
     - _Requirements: 3.1, 3.3, 6.1_
 
-  - [ ] 7.3 Implementasi fungsi `handleDeleteTask(state, id)`
+  - [x] 7.3 Implementasi fungsi `handleDeleteTask(state, id)`
     - Panggil `deleteTask`, simpan state baru via `saveState`, panggil `render`
     - _Requirements: 4.2, 6.1_
 
-  - [ ] 7.4 Implementasi fungsi `handleFilterChange(state, filter)`
+  - [x] 7.4 Implementasi fungsi `handleFilterChange(state, filter)`
     - Panggil `setFilter`, simpan state baru via `saveState`, panggil `render`
     - _Requirements: 5.2, 5.3, 5.4_
 
-  - [ ] 7.5 Implementasi fungsi `init()`
+  - [x] 7.5 Implementasi fungsi `init()`
     - Panggil `loadState()` untuk mendapatkan state awal
     - Bind event listener: tombol tambah (klik), input field (keydown Enter), filter buttons (klik)
     - Gunakan event delegation pada task list untuk menangani klik checkbox dan tombol hapus
     - Panggil `render(state)` untuk tampilan awal
     - _Requirements: 1.1, 1.2, 2.1, 5.5, 6.2_
 
-  - [ ] 7.6 Panggil `init()` saat DOM siap (`DOMContentLoaded`)
+  - [x] 7.6 Panggil `init()` saat DOM siap (`DOMContentLoaded`)
     - Tambahkan event listener `DOMContentLoaded` di bagian bawah `app.js`
     - _Requirements: 6.2_
 
-- [ ] 8. Checkpoint akhir — Pastikan semua tests lulus
+- [x] 8. Checkpoint akhir — Pastikan semua tests lulus
   - Jalankan `npx vitest --run` dan pastikan semua unit test dan property test lulus.
   - Verifikasi semua requirements tercakup.
   - Tanyakan kepada pengguna jika ada pertanyaan sebelum dianggap selesai.
