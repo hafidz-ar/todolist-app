@@ -1,0 +1,13 @@
+{
+  "name": "todolist-app",
+  "version": "1.0.0",
+  "description": "Aplikasi todolist berbasis Vanilla JS",
+  "type": "module",
+  "scripts": {
+    "test": "vitest --run"
+  },
+  "devDependencies": {
+    "fast-check": "^3.23.2",
+    "vitest": "^2.1.9"
+  }
+}

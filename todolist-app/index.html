@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todolist App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Daftar Tugas</h1>
+
+    <!-- Input Area -->
+    <div class="input-area">
+      <input
+        type="text"
+        id="task-input"
+        placeholder="Tambahkan tugas baru..."
+        maxlength="200"
+        aria-label="Input tugas baru"
+      />
+      <button id="add-btn" aria-label="Tambah tugas">Tambah</button>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" id="filter-bar" role="group" aria-label="Filter tugas">
+      <button class="filter-btn active" data-filter="all">Semua</button>
+      <button class="filter-btn" data-filter="active">Belum Selesai</button>
+      <button class="filter-btn" data-filter="completed">Selesai</button>
+    </div>
+
+    <!-- Task List -->
+    <ul class="task-list" id="task-list" aria-label="Daftar tugas"></ul>
+
+    <!-- Summary -->
+    <p class="summary" id="summary" aria-live="polite"></p>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
